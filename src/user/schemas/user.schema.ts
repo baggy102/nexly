@@ -14,13 +14,16 @@ export class User extends Base {
   name: string;
 
   @Prop()
-  phone: string;
+  phone_number: string;
+
+  @Prop({ default: null})
+  refresh_token: string;
 
   @Prop({ type: Types.ObjectId, ref: 'Company' })
   company_id: Types.ObjectId;
 
-  @Prop({ required: true, enum: ['admin', 'member'], default: 'member' })
-  role: 'admin' | 'member';
+  @Prop({ required: true, enum: ['admin', 'user'], default: 'user' })
+  role: 'admin' | 'user';
 }
 
 export type UserDocument = User & Document;

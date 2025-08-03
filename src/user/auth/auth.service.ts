@@ -12,13 +12,13 @@ export class AuthService {
 
     signAdmin(dto: TokenPayloadDTO) {
         const token =
-            this.jwtService.sign(dto, { expiresIn: "6h" })
+            this.jwtService.sign(dto, { expiresIn: "12h" })
         return token;
     }
 
     signUser(dto: TokenPayloadDTO) {
         const token =
-            this.jwtService.sign(dto, { expiresIn: "6h" })
+            this.jwtService.sign(dto, { expiresIn: "12h" })
         return token;
     }
 
