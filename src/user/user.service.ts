@@ -23,7 +23,7 @@ export class UserService {
       return this.hashPassword(plainPassword) === hashPassword
   }
 
-  async SignIn(dto: LoginUserRequestDTO) {
+  async signIn(dto: LoginUserRequestDTO) {
     const user = await this.userModel.findOne({ email: dto.email })
     if (!user) {
       throw new BadRequestException('유저가 존재하지 않습니다');
